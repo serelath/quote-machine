@@ -15,13 +15,15 @@ var quotes = {
 
 var quotesLength = Object.keys(quotes);
 
-var mathRandom = Math.floor(Math.random() * quotesLength.length) + 1;
-
-function newQuote(id) {
-    text.innerHTML = quotes[id].text;
-    author.innerHTML = quotes[id].author;
+function newQuote() {
+    
+    var mathRandom = Math.floor(Math.random() * quotesLength.length) + 1;
+    
+    text.innerHTML = quotes[mathRandom].text;
+    author.innerHTML = quotes[mathRandom].author;
+    
 }
 
-console.log(mathRandom);
+newQuote();
 
-button.addEventListener("click", newQuote(mathRandom));
+button.addEventListener("click", newQuote);
