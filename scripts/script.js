@@ -1,7 +1,10 @@
 var text = document.getElementById("text");
 var author = document.getElementById("author");
-var button = document.getElementById("new-quote");
+var newQuoteButton = document.getElementById("new-quote");
 var tweetQuote = document.getElementById("tweet-quote");
+var button = document.querySelector("button");
+var html = document.querySelector("html");
+
 
 var quotes = {
     "1": {
@@ -38,6 +41,24 @@ function newQuote() {
     
 }
 
-newQuote();
+function changeColor() {
+    
+    var redVal = Math.random() * 255;
+    var greenVal = Math.random() * 255;
+    var blueVal = Math.random() * 255;
+    
+    text.style.color = "rgba(" + redVal + "," + greenVal + "," + blueVal + ")";
+    author.style.color = "rgba(" + redVal + "," + greenVal + "," + blueVal + ")";
+    button.style.backgroundColor = "rgba(" + redVal + "," + greenVal + "," + blueVal + ")";
+    tweetQuote.style.backgroundColor = "rgba(" + redVal + "," + greenVal + "," + blueVal + ")";
+    html.style.backgroundColor = "rgba(" + redVal + "," + greenVal + "," + blueVal + ")";
+    
+}
 
-button.addEventListener("click", newQuote);
+newQuote();
+changeColor();
+
+newQuoteButton.addEventListener("click", () => {
+    newQuote();
+    changeColor();
+});
